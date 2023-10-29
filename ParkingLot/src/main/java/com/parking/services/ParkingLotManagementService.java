@@ -49,8 +49,8 @@ public class ParkingLotManagementService {
         System.out.println("Allocated slot number : " + parkinglotId);
     }
 
-    public void unpark(final Integer parkingSlotId) {
-
+    public void unpark(final String parkingSlotId) {
+        this.parkingLot.unpark(parkingSlotId);
     }
 
     public void destroySystem() {

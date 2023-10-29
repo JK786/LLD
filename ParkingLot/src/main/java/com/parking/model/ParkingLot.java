@@ -1,13 +1,9 @@
 package com.parking.model;
 
-import com.parking.services.ParkingStrategy.ParkingStrategy;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 import java.util.List;
-import java.util.Set;
 
 
 @Getter
@@ -30,4 +26,15 @@ public class ParkingLot {
        return parkingSpot.getId();
     }
 
+
+    public void unpark(String spotId) {
+
+        for(int i=0;i<parkingSpotList.size();i++)
+        {
+            if(parkingSpotList.get(i).getId().equals(spotId)) {
+                parkingSpotList.get(i).setCar(null);
+                parkingSpotList.get(i).setIsOccupied(Boolean.FALSE);
+            }
+        }
+    }
 }
